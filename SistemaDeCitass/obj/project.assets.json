@@ -1159,6 +1159,16 @@
             "rid": "win"
           }
         }
+      },
+      "SistemaDeCitas.Shared/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/SistemaDeCitas.Shared.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SistemaDeCitas.Shared.dll": {}
+        }
       }
     }
   },
@@ -3331,6 +3341,11 @@
         "system.windows.extensions.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "SistemaDeCitas.Shared/1.0.0": {
+      "type": "project",
+      "path": "../SistemaDeCitas.Shared/SistemaDeCitas.Shared.csproj",
+      "msbuildProject": "../SistemaDeCitas.Shared/SistemaDeCitas.Shared.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -3338,6 +3353,7 @@
       "Microsoft.AspNetCore.OpenApi >= 7.0.10",
       "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.13",
       "Microsoft.EntityFrameworkCore.Tools >= 7.0.13",
+      "SistemaDeCitas.Shared >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.5.0"
     ]
   },
@@ -3367,7 +3383,11 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Emerson Humberto\\Desktop\\SolucionAplicacion\\SistemaDeCitas.Shared\\SistemaDeCitas.Shared.csproj": {
+              "projectPath": "C:\\Users\\Emerson Humberto\\Desktop\\SolucionAplicacion\\SistemaDeCitas.Shared\\SistemaDeCitas.Shared.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

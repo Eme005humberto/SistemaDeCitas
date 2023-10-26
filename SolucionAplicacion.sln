@@ -5,6 +5,8 @@ VisualStudioVersion = 17.7.34024.191
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SistemaDeCitas", "SistemaDeCitass\SistemaDeCitas.csproj", "{E0842DE0-B424-452A-A45B-485C43AED1A7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SistemaDeCitas.Shared", "SistemaDeCitas.Shared\SistemaDeCitas.Shared.csproj", "{E29400BD-4D44-46B8-B9A5-60F25B7C1FD1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{E0842DE0-B424-452A-A45B-485C43AED1A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E0842DE0-B424-452A-A45B-485C43AED1A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E0842DE0-B424-452A-A45B-485C43AED1A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E29400BD-4D44-46B8-B9A5-60F25B7C1FD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E29400BD-4D44-46B8-B9A5-60F25B7C1FD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E29400BD-4D44-46B8-B9A5-60F25B7C1FD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E29400BD-4D44-46B8-B9A5-60F25B7C1FD1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

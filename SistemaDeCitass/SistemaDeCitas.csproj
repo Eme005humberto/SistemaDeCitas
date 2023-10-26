@@ -20,4 +20,8 @@
     <Folder Include="Models\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\SistemaDeCitas.Shared\SistemaDeCitas.Shared.csproj" />
+  </ItemGroup>
+
 </Project>
