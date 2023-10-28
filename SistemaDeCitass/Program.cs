@@ -13,7 +13,15 @@ builder.Services.AddDbContext<SistemaCitasContext>(opciones =>
     //Colocamos el nodo que se 
     //encuentra en appsettings
 });
-
+builder.Services.AddCors(c =>
+{
+    c.AddPolicy("NuevaPolitica", app =>
+    {
+        app.AllowAnyOrigin()
+        .AllowAnyHeader()
+        .AllowAnyMethod();
+    });
+});
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -26,9 +34,10 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
+app.UseCors("NuevaPolitica");//Agregamos nuestra politica para compartir informacion
+//sin ningun tipo de restriccion ya que como app servidor y app cliente se va a ejecutar
+//en URL Distintas
 app.UseAuthorization();
-
 app.MapControllers();
 
 app.Run();

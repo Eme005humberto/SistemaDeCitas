@@ -74,3 +74,5 @@ C:\Users\Emerson Humberto\Desktop\SolucionAplicacion\SistemaDeCitass\obj\Debug\n
 C:\Users\Emerson Humberto\Desktop\SolucionAplicacion\SistemaDeCitass\obj\Debug\net7.0\SistemaDeCitas.pdb
 C:\Users\Emerson Humberto\Desktop\SolucionAplicacion\SistemaDeCitass\obj\Debug\net7.0\SistemaDeCitas.genruntimeconfig.cache
 C:\Users\Emerson Humberto\Desktop\SolucionAplicacion\SistemaDeCitass\obj\Debug\net7.0\ref\SistemaDeCitas.dll
+C:\Users\Emerson Humberto\Desktop\SolucionAplicacion\SistemaDeCitass\bin\Debug\net7.0\SistemaDeCitas.Shared.dll
+C:\Users\Emerson Humberto\Desktop\SolucionAplicacion\SistemaDeCitass\bin\Debug\net7.0\SistemaDeCitas.Shared.pdb

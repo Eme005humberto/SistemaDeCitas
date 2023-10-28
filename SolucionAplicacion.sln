@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34024.191
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SistemaDeCitas", "SistemaDeCitass\SistemaDeCitas.csproj", "{E0842DE0-B424-452A-A45B-485C43AED1A7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SistemaDeCitas", "SistemaDeCitass\SistemaDeCitas.csproj", "{E0842DE0-B424-452A-A45B-485C43AED1A7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SistemaDeCitas.Shared", "SistemaDeCitas.Shared\SistemaDeCitas.Shared.csproj", "{E29400BD-4D44-46B8-B9A5-60F25B7C1FD1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SistemaDeCitas.Shared", "SistemaDeCitas.Shared\SistemaDeCitas.Shared.csproj", "{E29400BD-4D44-46B8-B9A5-60F25B7C1FD1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IUCliente", "IUCita\IUCliente.csproj", "{FE7EC56B-C0F8-4FB2-8D1F-E6266E0D1E85}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{E29400BD-4D44-46B8-B9A5-60F25B7C1FD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E29400BD-4D44-46B8-B9A5-60F25B7C1FD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E29400BD-4D44-46B8-B9A5-60F25B7C1FD1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE7EC56B-C0F8-4FB2-8D1F-E6266E0D1E85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE7EC56B-C0F8-4FB2-8D1F-E6266E0D1E85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE7EC56B-C0F8-4FB2-8D1F-E6266E0D1E85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE7EC56B-C0F8-4FB2-8D1F-E6266E0D1E85}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

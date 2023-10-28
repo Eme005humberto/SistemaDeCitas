@@ -1,0 +1,11 @@
+C:\Users\Emerson Humberto\Desktop\SolucionAplicacion\SistemaDeCitas.Shared\bin\Debug\net7.0\SistemaDeCitas.Shared.deps.json
+C:\Users\Emerson Humberto\Desktop\SolucionAplicacion\SistemaDeCitas.Shared\bin\Debug\net7.0\SistemaDeCitas.Shared.dll
+C:\Users\Emerson Humberto\Desktop\SolucionAplicacion\SistemaDeCitas.Shared\bin\Debug\net7.0\SistemaDeCitas.Shared.pdb
+C:\Users\Emerson Humberto\Desktop\SolucionAplicacion\SistemaDeCitas.Shared\obj\Debug\net7.0\SistemaDeCitas.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Emerson Humberto\Desktop\SolucionAplicacion\SistemaDeCitas.Shared\obj\Debug\net7.0\SistemaDeCitas.Shared.AssemblyInfoInputs.cache
+C:\Users\Emerson Humberto\Desktop\SolucionAplicacion\SistemaDeCitas.Shared\obj\Debug\net7.0\SistemaDeCitas.Shared.AssemblyInfo.cs
+C:\Users\Emerson Humberto\Desktop\SolucionAplicacion\SistemaDeCitas.Shared\obj\Debug\net7.0\SistemaDeCitas.Shared.csproj.CoreCompileInputs.cache
+C:\Users\Emerson Humberto\Desktop\SolucionAplicacion\SistemaDeCitas.Shared\obj\Debug\net7.0\SistemaDeCitas.Shared.dll
+C:\Users\Emerson Humberto\Desktop\SolucionAplicacion\SistemaDeCitas.Shared\obj\Debug\net7.0\refint\SistemaDeCitas.Shared.dll
+C:\Users\Emerson Humberto\Desktop\SolucionAplicacion\SistemaDeCitas.Shared\obj\Debug\net7.0\SistemaDeCitas.Shared.pdb
+C:\Users\Emerson Humberto\Desktop\SolucionAplicacion\SistemaDeCitas.Shared\obj\Debug\net7.0\ref\SistemaDeCitas.Shared.dll
