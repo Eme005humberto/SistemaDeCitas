@@ -71,10 +71,10 @@ namespace SistemaDeCitas.Controllers
             try
             {
                 //Vamos a buscar un empleado por Id
-                var dbEmpleado = await dbContext.TblPacientes.FirstOrDefaultAsync(x=>x.IdPaciente == id);
+                var dbEmpleado = await dbContext.TblPacientes.FirstOrDefaultAsync(x => x.IdPaciente == id);
 
                 //Luego validamos si existe ese paciente traemos sus datos
-                if(dbEmpleado != null)
+                if (dbEmpleado != null)
                 {
                     PacientesDTO.IdPaciente = dbEmpleado.IdPaciente;
                     PacientesDTO.NombreCompleto = dbEmpleado.NombreCompleto;
@@ -89,7 +89,7 @@ namespace SistemaDeCitas.Controllers
                     responseApi.Correcto = false;
                     responseApi.Mensaje = "No encontrando";
                 }
-                
+
             }
             catch (Exception ex)
             {
@@ -104,28 +104,34 @@ namespace SistemaDeCitas.Controllers
         [Route("GuardarPaciente")]
         public async Task<IActionResult> Guardar(PacientesDTO pacientes)
         {
-            var responseApi = new ResponseAPI<PacientesDTO>();
+            var responseApi = new ResponseAPI<int>();
 
             try
             {
                 //Vamos a guardar los datos en nuestro modelo
-                var dbEmpleado = new TblPaciente
+                var dbPaciente = new TblPaciente
                 {
                     //Agregamos los datos de mi modelo
                     NombreCompleto = pacientes.NombreCompleto,
                     Telefono = pacientes.Telefono,
                     FechaCita = pacientes.FechaCita,
-                    IdCita = pacientes.IdCita
 
                 };
-                dbContext.TblPacientes.Add(dbEmpleado);//Vamos a guardar estos cambios en nuestra tabla
-                responseApi.Correcto = true;
-                responseApi.Mensaje = PacientesDTO;
-
-
-
-
-
+                //Luego vamos a guardar los datos en dbContex
+                dbContext.TblPacientes.Add(dbPaciente);//Vamos a guardar estos cambios en nuestra tabla
+                await dbContext.SaveChangesAsync();
+                //Validamos si se creo nuestro paciente correctamente
+                if (dbPaciente.IdPaciente != 0)
+                {
+                    responseApi.Correcto = true;
+                    responseApi.Valor = dbPaciente.IdPaciente;//Me devuelve el valor con los datos del cliente
+                    //y su IdPaciente
+                }
+                else
+                {
+                    responseApi.Correcto = false;
+                    responseApi.Mensaje = "No se ha guardado los datos del paciente";
+                }
             }
             catch (Exception ex)
             {
@@ -134,4 +140,90 @@ namespace SistemaDeCitas.Controllers
             }
             return Ok(responseApi);
         }
+
+        //Metodo para modificar Paciente
+        [HttpPut]
+        [Route("EditarPaciente/{id}")]
+        public async Task<IActionResult> Modificar(PacientesDTO pacientes, int id)
+        {
+            var responseApi = new ResponseAPI<int>();
+             
+
+            try
+            {
+                //Vamos a buscar a ese paciente por medio del Id
+                var dbPaciente = await dbContext.TblPacientes.FirstOrDefaultAsync(e => e.IdPaciente == id);
+               
+              
+                //Validamos si el paciente es diferente de null
+                if (dbPaciente != null)
+                {
+                    //Si es diferente procedemos a modificar
+                    dbPaciente.NombreCompleto = pacientes.NombreCompleto;
+                    dbPaciente.Telefono = pacientes.Telefono;
+                    dbPaciente.FechaCita = pacientes.FechaCita;
+
+                    //Procedemos a guardar los cambios
+                    dbContext.TblPacientes.Update(dbPaciente);
+                    //Guardamos los cambios
+                    await dbContext.SaveChangesAsync();
+
+
+                    //Mandamos un mensaje para decirle a la Api que todo ha salido bien
+                    responseApi.Correcto = true;
+                    responseApi.Valor = dbPaciente.IdPaciente;
+                }
+                else
+                {
+                    responseApi.Correcto = false;
+                    responseApi.Mensaje = "No se han actualizado los datos del paciente";
+                }
+            }
+            catch (Exception ex)
+            {
+                responseApi.Correcto = false;
+                responseApi.Mensaje = ex.Message;
+            }
+            return Ok(responseApi);
+        }
+
+        //Metodo para eliminar Paciente
+        [HttpDelete]
+        [Route("EliminarPaciente/{id}")]
+        public async Task<IActionResult> Eliminar( int id)
+        {
+            var responseApi = new ResponseAPI<int>();
+
+            try
+            {
+                //Vamos a buscar a ese paciente por medio del Id
+                var dbPaciente = await dbContext.TblPacientes.FirstOrDefaultAsync(e => e.IdPaciente == id);
+
+
+                //Validamos si el paciente es diferente de null
+                if (dbPaciente != null)
+                {
+                    //Procedemos a eliminar
+                    dbContext.TblPacientes.Remove(dbPaciente);
+                    //Guardamos los cambios
+                    await dbContext.SaveChangesAsync();
+
+
+                    //Mandamos un mensaje para decirle a la Api que todo ha salido bien
+                    responseApi.Correcto = true;
+                }
+                else
+                {
+                    responseApi.Correcto = false;
+                    responseApi.Mensaje = "No se han eliminado los datos del paciente";
+                }
+            }
+            catch (Exception ex)
+            {
+                responseApi.Correcto = false;
+                responseApi.Mensaje = ex.Message;
+            }
+            return Ok(responseApi);
+        }
+    }
 }
