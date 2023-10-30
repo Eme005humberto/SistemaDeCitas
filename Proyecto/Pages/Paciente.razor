@@ -1,0 +1,97 @@
+﻿@page "/paciente"
+@page "/paciente/{idPacienteEditar:int}"
+
+@using SistemaDeCitas.Shared;
+@using IUCliente.Services;
+
+@inject IPacientesService PacientesService;
+@inject ICitasService CitaService
+@inject NavigationManager navegacion;
+<h3>@titulo</h3>
+
+<EditForm Model="paciente" OnValidSubmit="OnValidSubmit">
+    <DataAnnotationsValidator></DataAnnotationsValidator>
+    <div class="mb-3">
+        <label class="form-label">Nombre del Paciente</label>
+        <InputText class="form-control" @bind-Value="paciente.NombreCompleto"></InputText>
+        <ValidationMessage For="@(()=> paciente.NombreCompleto)"></ValidationMessage>
+    </div >
+    <div class="mb-3">
+        <label class="form-label">Motivo de la cita</label>
+        <InputSelect class="form-select" @bind-Value="paciente.IdCita">
+            <option value="0">--Seleccionar---</option>
+            @foreach(var item in listaCitas)
+            {
+                <option value="@item.IdCita">@item.Descripcion</option>
+            }
+        </InputSelect>
+        <ValidationMessage For="@(()=> paciente.IdCita)"></ValidationMessage>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Telefono del cliente</label>
+        <InputText class="form-control" @bind-Value="paciente.Telefono"></InputText>
+        <ValidationMessage For="@(()=> paciente.Telefono)"></ValidationMessage>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Fecha de la cita</label>
+        <InputDate class="form-control" @bind-Value="paciente.FechaCita"></InputDate>
+        <ValidationMessage For="@(()=> paciente.FechaCita)"></ValidationMessage>
+    </div>
+    <button class="btn btn-primary" type="submit">
+        @btnTexto
+    </button>
+
+    <a class="btn btn-warning" href="pacientes">Volver</a>
+</EditForm>
+
+
+@code {
+    //Recibimos el parametro del Id a editar
+    [Parameter]
+    public int idPacienteEditar { get; set; } = 0;//Por defecto sera 0
+
+    string titulo = string.Empty; //Para mostrar el titulo si vamos actualizar o crear
+    string btnTexto = string.Empty; //Texto de boton
+
+    PacientesDTO paciente = new PacientesDTO();//Creamos un objeto de la clase
+    List<CitasDTO> listaCitas = new List<CitasDTO>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        //Validamos si estamos actualizando un usuario o no
+        if(idPacienteEditar != 0)
+        {
+            paciente = await PacientesService.Buscar(idPacienteEditar);
+            btnTexto = "Actualizar Paciente";
+            titulo = "Editar Paciente";
+        }
+        else
+        {
+            paciente.FechaCita = DateTime.Today; //La fecha de hoy
+            btnTexto = "Guardar Paciente";
+            titulo = "Nuevo Paciente";
+        }
+        //Obtenemos la lista de Citas
+        listaCitas = await CitaService.ListarCitas();//Listamos todas la citas
+    }
+    //Metodo que valida si nuestro IdPaciente es 0 o si no exite procedemos a crearlo
+    //caso contrario si existe lo modificamos
+    private async Task OnValidSubmit()
+    {
+        int idDevuelto = 0;
+        if(idPacienteEditar == 0)
+        {
+            idDevuelto = await PacientesService.Guardar(paciente);
+        }
+        else
+        {
+            idDevuelto = await PacientesService.Modificar(paciente);
+        }
+
+        if(idDevuelto != 0)
+        {
+            navegacion.NavigateTo("/pacientes");
+        }
+    }
+
+}

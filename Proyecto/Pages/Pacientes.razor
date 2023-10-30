@@ -1,0 +1,82 @@
+﻿@page "/pacientes"
+@using SistemaDeCitas.Shared;
+@using CurrieTechnologies.Razor.SweetAlert2;
+@using IUCliente.Services;
+
+@inject SweetAlertService Swal;
+@inject IPacientesService PacientesService;
+
+<h3>Pacientes</h3>
+<a class="btn btn-success btn-sm mb-3" href="paciente">Solicitar una cita</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nombre del paciente</th>
+            <th>Telefono</th>
+            <th>Fecha de la cita establecida</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (listarPacientes == null)
+        {
+            //Validamos si nuestra lista esta vacia
+            //Me muestra un icono de carga
+            <tr>
+                <td colspan="5" align="center">
+                    <img style="width:50px" src="https://media.tenor.com/On7kvXhzml4AAAAj/loading-gif.gif">
+                </td>
+            </tr>
+        }
+        else
+        {
+            @foreach (var item in listarPacientes)
+            {
+                <tr>
+                    <td>@item.NombreCompleto</td>
+                    <td>@item.Telefono</td>
+                    <td>@item.FechaCita.ToString("dd/MM/yyyy")</td>
+                    <td>
+                        <a class="btn btn-primary btn-sm" href="paciente/@item.IdPaciente">
+                            <i class="oi oi-pencil"></i>
+                        </a>
+                        <button type="button" class="btn btn-danger btn-sm ms-2"
+                        @onclick="(() => Eliminar(item.IdPaciente))">
+                            <i class="oi oi-trash"></i>
+                        </button>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+@code {
+    List<PacientesDTO>? listarPacientes = null;//Vamos a permitir nulos
+
+    //Este metodo se ejecuta cuando nuestro componentes comienza a renderizarse
+    protected override async Task OnParametersSetAsync()
+    {
+        listarPacientes = await PacientesService.ListarPacientes();//Realizamos
+                                                                   //la solicitud a nuestra variable de servicio
+    }
+    //Metodo de eliminar
+    private async Task Eliminar(int id)
+    {
+        var resultado = await Swal.FireAsync(new SweetAlertOptions
+            {
+                //Personalizamos nuestra alerta que se le mostrara al usuario
+                Title = "Eliminar Paciente",
+                Text = "¿Deseas eliminar el paciente?",
+                Icon = SweetAlertIcon.Question,
+                ShowCancelButton = true
+            });
+        //Validamos si la operacion se realizo
+        if (resultado.IsConfirmed)
+        {
+            var Eliminado = await PacientesService.Eliminar(id);
+
+            if (Eliminado)
+                listarPacientes = listarPacientes!.FindAll(e => e.IdPaciente != id);
+        }
+    }
+}

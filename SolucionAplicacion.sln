@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SistemaDeCitas", "SistemaDe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SistemaDeCitas.Shared", "SistemaDeCitas.Shared\SistemaDeCitas.Shared.csproj", "{E29400BD-4D44-46B8-B9A5-60F25B7C1FD1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IUCliente", "IUCita\IUCliente.csproj", "{FE7EC56B-C0F8-4FB2-8D1F-E6266E0D1E85}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Proyecto", "Proyecto\Proyecto.csproj", "{AB7FEA13-2074-4316-919F-748C2D42B052}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{E29400BD-4D44-46B8-B9A5-60F25B7C1FD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E29400BD-4D44-46B8-B9A5-60F25B7C1FD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E29400BD-4D44-46B8-B9A5-60F25B7C1FD1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FE7EC56B-C0F8-4FB2-8D1F-E6266E0D1E85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FE7EC56B-C0F8-4FB2-8D1F-E6266E0D1E85}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FE7EC56B-C0F8-4FB2-8D1F-E6266E0D1E85}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FE7EC56B-C0F8-4FB2-8D1F-E6266E0D1E85}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB7FEA13-2074-4316-919F-748C2D42B052}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB7FEA13-2074-4316-919F-748C2D42B052}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB7FEA13-2074-4316-919F-748C2D42B052}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB7FEA13-2074-4316-919F-748C2D42B052}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
