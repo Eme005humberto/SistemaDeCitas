@@ -73,6 +73,10 @@
       "PackagePath": "staticwebassets\\index.html"
     },
     {
+      "Id": "C:\\Users\\Emerson Humberto\\Desktop\\SolucionAplicacion\\Proyecto\\wwwroot\\klipartz.com.png",
+      "PackagePath": "staticwebassets\\klipartz.com.png"
+    },
+    {
       "Id": "C:\\Users\\Emerson Humberto\\Desktop\\SolucionAplicacion\\Proyecto\\wwwroot\\sample-data\\weather.json",
       "PackagePath": "staticwebassets\\sample-data\\weather.json"
     },

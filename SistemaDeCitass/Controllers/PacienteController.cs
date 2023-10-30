@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using SistemaDeCitas.Shared;
 using Microsoft.EntityFrameworkCore;
 using SistemaDeCitas.Models;
+using SistemaDeCitas.Services;
 
 namespace SistemaDeCitas.Controllers
 {
@@ -10,16 +11,31 @@ namespace SistemaDeCitas.Controllers
     [ApiController]
     public class PacienteController : ControllerBase
     {
+
         //vamos a utilizar nuestro servicio de datos
         private readonly SistemaCitasContext dbContext;
+        private readonly GenerarPdf _generarPdf;
 
         //Voy a crear un constructor
-        public PacienteController(SistemaCitasContext dbContext)
+        public PacienteController(SistemaCitasContext dbContext,GenerarPdf generarPdf)
         {
             this.dbContext = dbContext;//Llamamos a mi variable de base de datos
             //De esta manera ya tenemos inyectado nuestro servicio de base de datos en nuestro clase 
             //de controlador
+            this._generarPdf = generarPdf;//Estoy usando el servicio para general pdf
         }
+
+        //Metodo para general el pdf de los pacientes
+        [HttpPost]
+        public IActionResult GenerarPdf(PacientesDTO pacientes)
+        {
+            string htmlContent = "";
+            byte[] pdfBytes = _generarPdf.PdfGenerar(htmlContent);
+            return File(pdfBytes, "application/pdf", "Reporte Generado.pdf");
+        }
+
+
+
         //Metodo para devolver la la lista de Pacientes
         //Nos va a devolver la lista de Citas
         [HttpGet]
@@ -115,7 +131,7 @@ namespace SistemaDeCitas.Controllers
                     NombreCompleto = pacientes.NombreCompleto,
                     Telefono = pacientes.Telefono,
                     FechaCita = pacientes.FechaCita,
-
+                    IdCita = pacientes.IdCita
                 };
                 //Luego vamos a guardar los datos en dbContex
                 dbContext.TblPacientes.Add(dbPaciente);//Vamos a guardar estos cambios en nuestra tabla

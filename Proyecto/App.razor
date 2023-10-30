@@ -4,9 +4,18 @@
         <FocusOnNavigate RouteData="@routeData" Selector="h1" />
     </Found>
     <NotFound>
-        <PageTitle>Not found</PageTitle>
+        <PageTitle>Sistema de Citas</PageTitle>
         <LayoutView Layout="@typeof(MainLayout)">
-            <p role="alert">Sorry, there's nothing at this address.</p>
+            <p role="alert">
+                <h3>Bienvenido al sistema de citas</h3>
+                <div class="menu">
+                    <div class="container">
+                        <div class="row-cols-2">
+                            <img src="https://media.tenor.com/I5g52h0Anw0AAAAi/clinica-guilarte-dr-guilarte.gif" width="100" />
+                      </div>
+                    </div>
+                </div>
+            </p>
         </LayoutView>
     </NotFound>
 </Router>

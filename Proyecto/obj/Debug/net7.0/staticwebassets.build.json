@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "PHGDhmFSqEhlENAcZVBOZvZ3vfWlZcLMlHxiw8XAMt4=",
+  "Hash": "X7aNwxAq6RE9rFYHStWOy0KQalt2kJE40AYNX7l84lg=",
   "Source": "Proyecto",
   "BasePath": "/",
   "Mode": "Root",
@@ -7835,6 +7835,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\index.html"
+    },
+    {
+      "Identity": "C:\\Users\\Emerson Humberto\\Desktop\\SolucionAplicacion\\Proyecto\\wwwroot\\klipartz.com.png",
+      "SourceId": "Proyecto",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Emerson Humberto\\Desktop\\SolucionAplicacion\\Proyecto\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "klipartz.com.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\klipartz.com.png"
     },
     {
       "Identity": "C:\\Users\\Emerson Humberto\\Desktop\\SolucionAplicacion\\Proyecto\\wwwroot\\sample-data\\weather.json",

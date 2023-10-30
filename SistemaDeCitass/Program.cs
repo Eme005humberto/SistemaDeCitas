@@ -13,6 +13,7 @@ builder.Services.AddDbContext<SistemaCitasContext>(opciones =>
     //Colocamos el nodo que se 
     //encuentra en appsettings
 });
+//Vamos implemetar el servicio de compartir informacion
 builder.Services.AddCors(c =>
 {
     c.AddPolicy("NuevaPolitica", app =>

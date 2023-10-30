@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SistemaDeCitas", "SistemaDe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SistemaDeCitas.Shared", "SistemaDeCitas.Shared\SistemaDeCitas.Shared.csproj", "{E29400BD-4D44-46B8-B9A5-60F25B7C1FD1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Proyecto", "Proyecto\Proyecto.csproj", "{AB7FEA13-2074-4316-919F-748C2D42B052}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Proyecto", "Proyecto\Proyecto.csproj", "{AB7FEA13-2074-4316-919F-748C2D42B052}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
